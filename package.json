@@ -1,0 +1,26 @@
+{
+  "name": "package.json",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@yudiel/react-qr-scanner": "^2.0.4",
+    "install": "^0.13.0",
+    "npm": "^11.5.2",
+    "qrcode.react": "^3.1.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-router-dom": "^6.24.0",
+    "vue": "3.5.18"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.1",
+    "@vitejs/plugin-vue": "6.0.1",
+    "vite": "5.3.1"
+  }
+}
