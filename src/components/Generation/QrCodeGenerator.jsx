@@ -1,7 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
-import style from './qrCode.module.css';
+import style from '../Generation/qrCode.module.css';
+
+import { GENERATE_DATA } from '../constants';
 
 export const QrCodeGenerator = () => {
   const [value, setValue] = useState('');
@@ -11,6 +13,10 @@ export const QrCodeGenerator = () => {
   //   console.log(array[1]); //function
 
   const onClicHandler = (event) => {
+    const prevData = JSON.parse(localStorage.getItem(GENERATE_DATA) || '[]');
+
+    localStorage.setItem(GENERATE_DATA, JSON.stringify([...prevData, value]));
+
     // console.log('gegegerag', event); //проверяли евент
     setShowQrCode(value);
     setValue('');
