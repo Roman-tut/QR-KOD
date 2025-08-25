@@ -5,12 +5,13 @@ import { QRCodeSVG } from 'qrcode.react';
 
 export const SkanHistory = () => {
   const data = JSON.parse(localStorage.getItem(SCAN_DATA) || '[]');
-  console.log(data);
+  // console.log(data);
+  const uniqueData = [...new Set(data)];
 
   return (
     <div>
-      {data.map((text) => (
-        <p key={text}>
+      {uniqueData.map((text, index) => (
+        <p key={index}>
           {text}
           <QRCodeSVG value={text} size={100} />
         </p>
